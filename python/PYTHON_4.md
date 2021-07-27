@@ -71,8 +71,8 @@ count를 지정하면, 해당 개수만큼 시행
 기본값은 공백제거
 
 ```python
-.rstrip
-.lstrip
+.rstrip()
+.lstrip('h')  # (사이의 모든 문자 h를 지움 )
 
 '안녕하세요????'.rstrip('?')
 ->'안녕하세요'
