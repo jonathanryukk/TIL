@@ -102,9 +102,11 @@ for num in range(1,t+1):
     print(f'#{num} {}sum})
 ```
 
+#### 달팽이
 
+![image-20210812104655831](md-images/image-20210812104655831.png
 
-
+![image-20210812112559494](md-images/image-20210812112559494.png)
 
 ### 전치 행렬
 
