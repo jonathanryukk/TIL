@@ -109,7 +109,7 @@
 
 사용자의 입력값을 받는 태그
 
-
+<label> : 서식 입력 요소의 캡션
 
 
 
@@ -133,7 +133,7 @@ submit -> 서버로 데이터를 제출
 
 * 같은언어가 아닌 **각각 별개의 언어**
 
-* 사용자에게 html이 어떻게 보일지 스타일,레이아웃 등을통해 HTML을 표시하는 방법을 지정하는 언어
+* 사용자에게 html이 어떻게 보일지 **스타일,레이아웃** 등을통해 HTML을 표시하는 방법을 지정하는 언어
 
 선택자
 
@@ -207,9 +207,9 @@ font-size: 15ps;
 
 클래스 아래애 모든 P 태그에 속성 적용
 
-일반 형제 결합자  P ~ span  p태그 이후 모든 ~ span 태그요소
+**일반 형제 결합자**  P ~ span  p태그 이후 모든 ~ span 태그요소
 
-인접 형제 결합자  P + span  바로뒤에 위치하는 span태그 요소 선택
+**인접 형제 결합자**  P + span  바로뒤에 위치하는 span태그 요소 선택
 
 
 
@@ -231,7 +231,7 @@ font-size: 15ps;
 
   상속 되는 것 - TEXT 관련요소
 
-  상속 되지 않는 것 BOX model 관련 요소 ex) borde  padding width margin ....ext
+  상속 되지 않는 것 BOX model 관련 요소 ex) borde,  padding,  **width**,  margin ....ext
 
   ​	 position 관련 요소  ex) position 등
 
@@ -313,7 +313,7 @@ font-size: 15ps;
 
 * **absolute** : 절대적위치
 
-  > static이 아닌 가장 가까운 부모/조상을 기준으로 이동, 없으면 body에 붙는 형태
+  > **static이 아닌** 가장 가까운 부모/조상을 기준으로 이동, 없으면 body에 붙는 형태
   >
   > 원래 위치해 있었던 과거 위치에 있던 공간은 더이상 존재하지 않음
 
@@ -325,7 +325,194 @@ font-size: 15ps;
 
 
 
+# 1일차 HW/WS
+
+
+
+#### * 이미지 +링크
+
+```
+  <a href="https://www.ssafy.com/">
+    <img src="C:\Users\류현진\OneDrive\바탕 화면\싸피\web\web_1\ssafy.png" alt="ssafy">
+  </a>
+```
+
+
+
+#### * nth-child()와 nth-of-type()의 차이점
+
+nth-child(n) 부모 엘리먼트의 **모든** 자식 엘리먼트중 n번째
+
+nth-of-type(n) 부모 엘리먼트의 **특정** 자식 엘리먼트중 n번째
+
+
+
+#### * 절대경로와 상대경로
+
+**절대경로**
+
+어떠한 웹페이지나 파일이 가지고 있는 고유한 경로
+
+http://www.google.com, C:\users\document\untitled.jpg
+
+**상대경로**
+
+현재 위치한 경로로부터 그곳의 위치
+
+> **이미지 위치가 바뀌어도 상대경로로 경로를 저장하면 사진이뜬다!!**
 
 
 
 
+
+### Float
+
+![image-20210816214035969](md-images/image-20210816214035969.png)
+
+#### 속성 
+
+* none: 기본값
+* left: 요소를 왼쪽으로 띄움
+* right: 요소를 오른쪽으로 띄움
+
+
+
+
+
+# Flex box
+
+
+
+> ### Float clear
+
+* 선택한 요소의 맨 마지막 자식으로 가상요소 생성
+
+  clearfix::affter
+
+  
+
+![image-20210817005003203](md-images/image-20210817005003203.png)
+
+#### ![image-20210817010203239](md-images/image-20210817010203239.png)
+
+**justify -> 메인축 정렬**
+
+**align   -> 교차축 정렬**
+
+**content -> 여러줄**
+
+**items -> 한줄**
+
+**self -> flex item 개별요소**
+
+ex) justify-content : 메인축 기준 여러줄 정렬
+
+​	  align-items : 교차축 기준 한줄 정렬
+
+​	  align-self : 교차축 기준 선택한 요소 하나 정렬
+
+
+
+# Bootstrap
+
+.mx-auto  수평 중앙 정렬
+
+
+
+##### 반응형 웹 Responsive web design
+
+
+
+### Grid system
+
+flexbox로 제작됨.
+
+12개의 column 6개의 grid breakpoints 존재
+
+![image-20210817013425869](md-images/image-20210817013425869.png)
+
+  
+
+
+
+### 3일차 hw
+
+
+
+1. CSS flex-direction Flex box의 주축을 변경하는 flex-direction의 4가지 값과 각각의 특징을 작성하시오
+
+   row
+
+   주축이 좌에서 우로 행을 따른다. ->
+
+   row-reverse
+
+   주축이 우에서 좌로 행을 따른다. <-
+
+   column
+
+   주축이 페이지상단에서 하단으로 방향을 따른다.
+
+   column-reverse
+
+   주축이 페이지하단에서 상단으로 방향을 따른다.
+
+   
+
+2. Bootstrap flex-direction flex-direction의 4가지 요소와 대응하는 bootstrap 클래스를 작성하시오
+
+   d-flex
+
+
+
+3. align-items align-items 속성의 4가지 값과 각각의 특징을 작성하시오
+
+   flex-start : 아이템들을 시작점으로 정렬
+
+   flex-end : 아이템들을 끝으로 정렬
+
+   center : 아이템들을 가운데로 정렬
+
+   stretch : 아이템들이 수직축 방향으로 끝까지 쭈욱 늘어난다.
+
+   baseline : 아이템들을 텍스트 베이스라인 기준으로 정렬
+
+   ​	
+
+4. flex-flow   - flex-direction, flex-wrap
+
+
+
+5.  Bootstrap grid system
+
+   ```html
+   <div class= 'container'>
+       <div class='row'>
+           <div class="col-xl-6"></div>
+       </div>
+   </div>
+   ```
+
+   
+
+   xs: 576px 이하에서 세로로 표시시작
+
+   sm:576px 이상에서 세로로 표시시작
+
+   md:768px 이상에서 세로로 표시시작
+
+   lg: 992px이상에서 세로로 표시 시작
+
+   xl: 1200px 이상에서 세로로 표시 시작
+
+   xxl:1400px 이상에서 세로로 표시 시작
+
+   
+
+   1-12
+
+   12분할로 나누어진  그리드에 해당 숫자만큼 분할
+
+
+
+#### offset - > 앞 칸 비우기
