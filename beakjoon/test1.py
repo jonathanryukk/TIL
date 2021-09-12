@@ -1,16 +1,35 @@
+import sys
+
+sys.stdin = open('input.txt')
+
 t = int(input())
+for tc in range(1, t + 1):
+    arr = [list(map(int, list(input().split()))) for _ in range(9)]
 
-dx = [0, 1, 0, -1]
-dy = [1, 0, -1, 0]
+    result = 1
 
-for num in range(1+t+1):
-    N = int(input())
-    BRD = [[0]*N for _ in range(N)]
-    
-    value = 1
-    R = 0
-    C = 0
-    while calue <= N**2:
-        BRD[R][C] = value
+    for i in range(9):
+        sum1 = 0
+        count1 = [0] * 9
+        count2 = [0] * 9
+        for j in range(9):
+            count1[arr[i][j] - 1] = 1
+            count2[arr[j][i] - 1] = 1
+        for k in range(9):
+            if count1[k] != 1 or count2[k] != 1:
+                result = 0
+                break
 
-        if  R < 0 or C < 0
+    for i in range(9):
+        for j in range(9):
+            count3 = [0] * 9
+            if (i == 0 and j == 0) or (i == 3 and j == 3) or (i == 6 and j == 6):
+                for x in range(3):
+                    for y in range(3):
+                        count3[arr[i + x][j + y] - 1] = 1
+                for k in range(9):
+                    if count3[k] != 1:
+                        result = 0
+                        break
+
+    print(f'#{tc} {result}')
