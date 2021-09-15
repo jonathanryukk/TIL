@@ -1,22 +1,22 @@
-num = int(input())
-s = []
+t = int(input())
 
-for _ in range(num):
-    tem = input()
-    s.append(tem)
+ss = []
 
-point = [0] * 26
+for _ in range(t):
+    ss.append(input())
 
-for word in s:
-    for i letter in enumerate(word):
-        mul = len(word) - i - 1
-        point[ord(letter) - ord('A')] += 10 ** mul
+alphabet = [0 for i in range(26)]
 
-point.sort(reverse=True)
+for s in ss:
+    i = 0
+    while s:
+        now = s[-1]
+        alphabet[ord(now) - ord('A')] += pow(10, i)
+        i += 1
+        s = s[:-1]
 
-# 2. 중요도가 큰 순서대로 9부터 곱한다.
-sum = 0
-for _ in range(9, -1, -1):
-    sum += point[_] * (9 - _)
-
-print(sum)
+alphabet.sort(reverse=True)
+ans = 0
+for i in range(9, 0, -1):
+    ans += i * alphabet[9 - i]
+print(ans)
