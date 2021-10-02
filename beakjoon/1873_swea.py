@@ -1,7 +1,7 @@
-import sys
-
-sys.stdin = open('input.txt')
-
+# import sys
+#
+# sys.stdin = open('input.txt')
+#
 
 def S(x, y):
     if arr[x][y] == '^':
@@ -12,7 +12,7 @@ def S(x, y):
                 arr[i][y] = '.'
                 break
     elif arr[x][y] == '>':
-        for i in range(y, m + 1):
+        for i in range(y, m):
             if arr[x][i] == '#':
                 break
             if arr[x][i] == '*':
@@ -28,8 +28,8 @@ def S(x, y):
                 break
 
     else:
-        for i in range(x, n + 1):
-            if arr[x][i] == '#':
+        for i in range(x, n):
+            if arr[i][y] == '#':
                 break
             if arr[i][y] == '*':
                 arr[i][y] = '.'
@@ -37,44 +37,56 @@ def S(x, y):
 
 
 def U(x, y):
-    if arr[x - 1][y] == '.' and 0 <= (x-1) < n:
-        arr[x][y] = '.'
-        arr[x - 1][y] = '^'
-        x -= 1
-        return x, y
+    if x > 0:
+        if arr[x - 1][y] == '.' and 0 <= (x - 1) < n:
+            arr[x][y] = '.'
+            arr[x - 1][y] = '^'
+            return (x - 1), y
+        else:
+            arr[x][y] = '^'
+            return x, y
     else:
         arr[x][y] = '^'
         return x, y
 
 
 def D(x, y):
-    if arr[x + 1][y] == '.' and 0 <= (x+1) < n:
-        arr[x][y] = '.'
-        arr[x + 1][y] = 'v'
-        x += 1
-        return x, y
+    if (n - 1) > x:
+        if arr[x + 1][y] == '.' and 0 <= (x + 1) < n:
+            arr[x][y] = '.'
+            arr[x + 1][y] = 'v'
+            return (x + 1), y
+        else:
+            arr[x][y] = 'v'
+            return x, y
     else:
         arr[x][y] = 'v'
         return x, y
 
 
 def L(x, y):
-    if arr[x][y - 1] == '.' and 0 <= (y-1) < m:
-        arr[x][y] = '.'
-        arr[x][y - 1] = '<'
-        y -= 1
-        return x, y
+    if y > 0:
+        if arr[x][y - 1] == '.' and 0 <= (y - 1) < m:
+            arr[x][y] = '.'
+            arr[x][y - 1] = '<'
+            return x, (y - 1)
+        else:
+            arr[x][y] = '<'
+            return x, y
     else:
         arr[x][y] = '<'
         return x, y
 
 
 def R(x, y):
-    if arr[x][y + 1] == '.' and 0 <= (y+1) < n:
-        arr[x][y] = '.'
-        arr[x][y + 1] = '>'
-        y += 1
-        return x, y
+    if (m - 1) > y:
+        if arr[x][y + 1] == '.' and 0 <= (y + 1) < m:
+            arr[x][y] = '.'
+            arr[x][y + 1] = '>'
+            return x, (y + 1)
+        else:
+            arr[x][y] = '>'
+            return x, y
     else:
         arr[x][y] = '>'
         return x, y
@@ -94,14 +106,23 @@ for tc in range(1, t + 1):
 
     for z in command:
         if z == 'U':
-            U(x, y)
+            x, y = U(x, y)
         elif z == 'D':
-            D(x, y)
+            x, y = D(x, y)
         elif z == 'L':
-            L(x, y)
+            x, y = L(x, y)
         elif z == 'R':
-            R(x, y)
+            x, y = R(x, y)
         else:
             S(x, y)
 
-    print(arr)
+    print(f'#{tc}', end=' ')
+    for nx in arr:
+        for ny in nx:
+            print(ny, end='')
+        print()
+
+
+# **....v
+# .-..#..
+# #......
