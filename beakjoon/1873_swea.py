@@ -103,6 +103,7 @@ for tc in range(1, t + 1):
         for j in range(m):
             if arr[i][j] == '>' or arr[i][j] == '<' or arr[i][j] == '^' or arr[i][j] == 'v':
                 x, y = i, j
+                break
 
     for z in command:
         if z == 'U':
