@@ -1,3 +1,21 @@
+# Start Camp
+
+- open api를 이용한 날씨정보 탐색
+
+- Virtual Robot Quest  
+
+  VRT SW 사용 (LEGO)
+
+- 프로토타이핑 툴 목업 사용
+
+- 텔레그램 나만의 챗봇 개발하기
+
+
+
+
+
+
+
 # WEB
 
 
