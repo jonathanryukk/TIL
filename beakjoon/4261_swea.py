@@ -9,13 +9,14 @@ for tc in range(1, t + 1):
     s = list(s)
     arr = list(input().split())
 
-
     result = 0
     for i in range(n):
         cnt = len(arr[i])
         cntcheck = 0
         for j in range(len(arr[i])):
-            if arr[i][j] in keypad[int(s[j])]:
+            if arr[i][j] not in keypad[int(s[j])]:
+                break
+            else:
                 cntcheck += 1
         if cntcheck == cnt:
             result += 1
