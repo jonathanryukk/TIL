@@ -20,7 +20,7 @@
 
 
 
-#### HTML, CSS, JavaScript, Django, Vue
+#### HTML, CSS, JavaScript, Django + DRF , Vue
 
 
 
@@ -134,5 +134,4 @@ SEWA, 백준, 프로그래머스
 [**Lv. 1** 여러 기준으로 정렬하기SELECT 28769명 완료](https://programmers.co.kr/learn/courses/30/lessons/59404)
 
 [**Lv. 1** 상위 n개 레코드SELECT 28417명 완료](https://programmers.co.kr/learn/courses/30/lessons/59405)
-
 
