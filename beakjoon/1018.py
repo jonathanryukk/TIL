@@ -5,7 +5,6 @@ chess_B = [[0] * m for _ in range(n)]
 arr = [list(input()) for _ in range(n)]
 cnt = float('inf')
 
-
 def check(a, b):
     global cnt
     temp_W, temp_B = 0, 0
